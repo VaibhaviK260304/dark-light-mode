@@ -5,27 +5,36 @@
     <meta name="viewport" content="width=n, initial-scale=1.0">
     <title>Dark mode</title>
     <style>
-        .theme{
+        .theme-icon{
             height: 30px;
             width: 30px;
             padding: 5px;
             border-radius: 5px;
             cursor: pointer;
+            background-color: rgb(191, 183, 183);
         }
         .active{
-            background-color:  #292c2f;
-            border: 1px solid black;
+            background-color: white;
+            border: 2px solid black;
+        }
+        .theme-dark{
+            float: right;
+            background-color: black;
+            color: white;
+        }
+        .theme-light{
+            background-color:  lightgrey;
+            color: black;
         }
     </style>
 </head>
-<body>
-    <h1>Dark Mode Theme Changer</h1>
-    <br/>
 
+<body id='body'>
     <div>
-        <img src="night-mode.png" class="theme active"  id="darkModeImage" onclick="darkmode()"/>
-        <img src="light.png" class="theme" id="lightModeImage" onclick="lightmode()"/>
-    </div>
+        <img src="night-mode.png" class="theme-icon " onclick="darkMode()"  id="btn-dark" />
+        <img src="light.png" class="theme-icon active " onclick="lightMode()" id="btn-light" />
+
+        <h1>Dark Mode Theme Changer</h1>
 
     <p>
         Dark Mode is characterized by a predominantly dark color palette, typically using shades of 
@@ -44,15 +53,31 @@
         to switch between dark and light mode, with some even allowing the theme to change automatically based 
         on the time of day or ambient light sensors.   
     </p>
-
+</div>
 
     <script>
-        function darkmode(){
-            const darkimg=document.getElementById("darkModeImage");
-            darkimg.classlist.add('active');
+        function darkMode()
+        {
+            const darkimg =document.getElementById('btn-dark');
+            darkimg.classList.add('active');
+
+            const lightimg = document.getElementById('btn-light');
+            lightimg.classList.remove('active');
+
+            const bodyelement = document.getElementById('body');
+            bodyelement.classList="theme-dark";
         }
-        function lightmode(){
-            const lightimg=document.getElementById("lightModeImage");
+
+        function lightMode()
+        {
+            const lightimg = document.getElementById('btn-light');
+            lightimg.classList.add('active');
+
+            const darkimg = document.getElementById('btn-dark');
+            darkimg.classList.remove('active');
+
+            const bodyelement = document.getElementById('body');
+            bodyelement.classList="theme-light"; 
         }
     </script>
 </body>
