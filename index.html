@@ -8,7 +8,7 @@
         .theme-icon{
             height: 30px;
             width: 30px;
-            padding: 5px;
+            margin: 0 5px;
             border-radius: 5px;
             cursor: pointer;
             background-color: rgb(191, 183, 183);
@@ -26,15 +26,24 @@
             background-color:  lightgrey;
             color: black;
         }
+        .heading{
+            display: flex;
+            margin-left: 47%;
+            margin-right: 50%;
+        }
+        .head{
+            text-align: center;
+        }
     </style>
 </head>
 
 <body id='body'>
     <div>
+        <div class="heading">
         <img src="night-mode.png" class="theme-icon " onclick="darkMode()"  id="btn-dark" />
         <img src="light.png" class="theme-icon active " onclick="lightMode()" id="btn-light" />
-
-        <h1>Dark Mode Theme Changer</h1>
+        </div>
+        <h1 class="head">Dark Mode Theme Changer</h1>
 
     <p>
         Dark Mode is characterized by a predominantly dark color palette, typically using shades of 
