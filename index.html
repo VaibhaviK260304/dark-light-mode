@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=n, initial-scale=1.0">
+    <title>Dark mode</title>
+    <style>
+        .theme{
+            height: 30px;
+            width: 30px;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .active{
+            background-color:  #292c2f;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dark Mode Theme Changer</h1>
+    <br/>
+
+    <div>
+        <img src="night-mode.png" class="theme active"  id="darkModeImage" onclick="darkmode()"/>
+        <img src="light.png" class="theme" id="lightModeImage" onclick="lightmode()"/>
+    </div>
+
+    <p>
+        Dark Mode is characterized by a predominantly dark color palette, typically using shades of 
+        black or dark gray as the background color, with lighter text and graphical elements. 
+        This mode is designed to reduce the amount of light emitted by screens, thereby minimizing 
+        eye strain and discomfort in low-light conditions. It's also said to conserve battery life on 
+        devices with OLED or AMOLED displays, as these technologies require less power to display darker colors.
+
+        Light Mode, on the other hand, features a light background, usually white, with dark text and elements. 
+        This mode is often preferred in brightly lit environments for its superior legibility and clarity. 
+        Light mode is the traditional default for many systems and applications, and it's sometimes considered 
+        more accessible for users with certain visual impairments.
+        
+        Both modes have their advantages, and the choice between them often comes down to personal preference, 
+        specific use cases, or environmental conditions. Many modern devices and applications offer the option 
+        to switch between dark and light mode, with some even allowing the theme to change automatically based 
+        on the time of day or ambient light sensors.   
+    </p>
+
+
+    <script>
+        function darkmode(){
+            const darkimg=document.getElementById("darkModeImage");
+            darkimg.classlist.add('active');
+        }
+        function lightmode(){
+            const lightimg=document.getElementById("lightModeImage");
+        }
+    </script>
+</body>
+</html>
